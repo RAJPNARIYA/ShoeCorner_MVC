@@ -1,0 +1,176 @@
+﻿@using ClassLibrary1.BAL;
+@using ClassLibrary1.DAL;
+@using WebApplication8.Controllers;
+
+@{
+	ViewData["Title"] = "Cart";
+	
+}
+
+
+<div id="content">
+
+	<div class="checkout">
+
+		<div class="container">
+
+			<div class="check-anchor clearfix mb40">
+				<div class="holder">
+					<ul>
+						<li class="active"><a href="#"><i class="fa fa-star"></i> Shopping Cart</a></li>
+						<li><a href="#"><i class="fa fa-star"></i> Checkout</a></li>
+						<li><a href="#"><i class="fa fa-star"></i> ORDER COMPLETE <i class="fa fa-star"></i></a></li>
+					</ul>
+					<div class="holder-border"></div>
+				</div>
+			</div>
+
+			<div class="check-infos">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="check-details">
+							<table class="table">
+								<thead>
+									<tr>
+										<th></th>
+										<th>Details</th>
+										<th>Price</th>
+										<th>Quantity</th>
+										<th>Subtotal</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody class="check-body">
+									@foreach(var item in Model){
+										<tr style="text-align: center;vertical-align: inherit;">
+										<td><img src="~/images/@item.Product_img" alt="product" width="150px" height="150px"></td>
+											<td style="text-align: center;vertical-align: inherit;">
+											@item.Product_Name
+											@*<p>Size: <span>XL</span></p>
+											<p>Color: <span>Black</span></p>*@
+										</td style="text-align: center;vertical-align: inherit;">
+											@{
+												var Product_Name=item.Product_Name;
+												var Product_Price = item.Product_Price;
+												var Quantity = item.Quantity;
+											}
+
+											
+											<td style="text-align: center;vertical-align: inherit;"><i class="fa fa-rupee"> @item.Product_Price</i></td>
+											@using (Html.BeginForm("CartUpdate", "Home"))
+											{
+											<td style="text-align: center;vertical-align: inherit;">
+
+												<input type="text"  name="Qua" placeholder="Add Quantity" value="@item.Total_Quantity">
+												<input type="hidden" name="id" value="@item.Product_id">
+												
+
+
+
+											</td>
+											<td style="text-align: center;vertical-align: inherit;"><i class="fa fa-rupee"> @item.Total_Price</i></td>
+											<td style="text-align: center;vertical-align: inherit;">
+												<input type="submit" style="border:none; margin-left:0; width:80px" class="update" value="Update">
+											</td>
+											}
+										<td><a href="#"><img src="images/delete.png" alt=""></a></td>
+										</tr>
+									}
+									@*<tr>
+										<td><img src="upload/check2.png" alt=""></td>
+										<td>
+											<h6>Brown Leather Hand Bag</h6>
+											<p>Size: <span>XL</span></p>
+											<p>Color: <span>White</span></p>
+										</td>
+										<td>$ 199.00</td>
+										<td><input type="text" placeholder="1"></td>
+										<td>$ 199.00</td>
+										<td><a href="#"><img src="images/delete.png" alt=""></a></td>
+									</tr>*@
+								</tbody>
+							</table>
+
+							<div class="coupon">
+								<input type="text" placeholder="Enter Coupon">
+								<input type="submit" value="Apply">
+								
+								<a asp-action="Cart" asp-controller="Home" class="update">Update Cart</a>
+								<a asp-action="CheckOut" asp-controller="Home" class="proceed">proceed to checkout</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="check-aside">
+							<div class="orders mb20">
+								<h6>Cart totals</h6>
+								@{
+									int SubTotal = 0;
+											@foreach(var i in Model){
+									
+									SubTotal = i.Total_Price+SubTotal;
+								}
+								}
+								<p>Cart Subtotal: <span><i class="fa fa-rupee"> @SubTotal</i></span></p>
+								
+								<p>Shipping and Handling: <span><i class="fa fa-rupee"> 0</i></span></p>
+								<p class="bd0"><strong>Order Total: <span><i class="fa fa-rupee"> @SubTotal</i></span></strong></p>
+							</div>
+							<div class="shipping">
+								<h6>CALCULATE sHIPPING</h6>
+								<select class="select">
+									<option value="Select Size">Select Country</option>
+									<option value="Albania">Albania</option>
+									<option value="Australia">Australia</option>
+									<option value="UK">Unitend Kingdom</option>
+									<option value="US">Unidend States</option>
+								</select>
+								<select class="select">
+									<option value="Select Size">Select State</option>
+									<option value="Albania">Albania</option>
+									<option value="Australia">Australia</option>
+									<option value="UK">Unitend Kingdom</option>
+									<option value="US">Unidend States</option>
+								</select>
+								<input type="text" placeholder="Zip/Postcode">
+								<input type="submit" value="UPDATE TOTAL">
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- End Product Single -->
+
+
+
+	<div class="partners">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners1.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners2.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners3.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners4.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners5.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners6.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

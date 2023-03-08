@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+    <table>
+    @{
+        using (Html.BeginForm("ProductAddPage", "Home"))
+        {
+        <tr>
+            <td><label>Product_Name: </label></td>
+            <td><input type="text" name="p_name"/></td>
+        </tr>
+        <tr>
+            <td><label>Price: </label></td>
+            <td><input type="number" name="p_price" /></td>
+        </tr>
+        <tr>
+            <td><label>Product_Desc: </label></td>
+            <td><textarea rows="4" name="p_desc" ></textarea></td>
+        </tr>
+        <tr>
+            <td><label>Product_Img1: </label></td>
+            <td><input type="file" name="p_img1" /></td>
+        </tr>
+        <tr>
+            <td><label>Product_Name: </label></td>
+            <td><input type="file" name="p_img2" /></td>
+        </tr>
+        <tr>
+            <td><label>Gender: </label></td>
+            <td><select>
+                    <option>----Select----</option>
+                    <option>Men</option>
+                    <option>Women</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><label>Category: </label></td>
+            <td>
+                <select>
+                    <option>----Select----</option>
+                    <option>Men Casual</option>
+                    <option>Men Sport</option>
+                    <option>Men Fromal</option>
+                    <option>Women Heels</option>
+                    <option>Women Slider</option>
+                    <option>Women Sport</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+        <td colspan="2">
+            <input type="submit" value="Add Product"/>
+        </td>
+        </tr>
+        }
+    }
+    </table>

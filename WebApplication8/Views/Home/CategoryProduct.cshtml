@@ -1,0 +1,143 @@
+﻿<div id="content">
+	<div class="shop-main container">
+		<div class="row">
+			<div class="col-md-3">
+				<aside class="left-shop">
+
+					<div class="shop-categories mb30">
+						<h1 class="asidetitle">Categories</h1>
+
+						<ul>
+							<li><a href="Women.html">Women</a></li>
+							<li><a href="/Extra/Men">Men</a></li>
+						</ul>
+					</div>
+
+					<div class="brands mb30">
+						<h1 class="asidetitle">Colors</h1>
+
+						<form action="#">
+							<ul>
+								<li><input type="checkbox" value="Brand">White</li>
+								<li><input type="checkbox" value="Brand">Black</li>
+								<li><input type="checkbox" value="Brand">Grey</li>
+								<li><input type="checkbox" value="Brand">Red</li>
+								<li><input type="checkbox" value="Brand">Blue</li>
+							</ul>
+						</form>
+
+					</div>
+
+					<div class="brands mb30">
+						<h1 class="asidetitle">Sizes</h1>
+
+						<form action="#">
+							<ul>
+								<li><input type="checkbox" value="Brand">7 <span></span></li>
+								<li><input type="checkbox" value="Brand">8 <span></span></li>
+								<li><input type="checkbox" value="Brand">9 <span></span></li>
+								<li><input type="checkbox" value="Brand">10 <span></span></li>
+							</ul>
+						</form>
+
+					</div>
+
+					<div class="brands mb30">
+						<h1 class="asidetitle">Brands</h1>
+
+						<form action="#">
+							<ul>
+								<li><input type="checkbox" value="Brand">Adidas</li>
+								<li><input type="checkbox" value="Brand">Nike</li>
+								<li><input type="checkbox" value="Brand">Puma</li>
+
+							</ul>
+						</form>
+
+					</div>
+				</aside>
+				<!-- End aside shop -->
+			</div>
+
+			<div class="col-md-9">
+				<div class="shop-content">
+					<div class="toolbar">
+						<div class="sort-select">
+							<label>Sort by</label>
+							<select class="selectBox">
+								<option>Default Sorting</option>
+								<option>Price</option>
+								<option>High To Low</option>
+								<option>Low To High</option>
+							</select>
+						</div>
+						<div class="sort-select">
+							<label>Show</label>
+							<select class="selectBox">
+								<option>12</option>
+								<option>16</option>
+								<option>20</option>
+							</select>
+						</div>
+						<div class="lg-panel htabs">
+							<span>View</span>
+							<a id="list" class="list-btn" href="shop-list.html"><i class="fa fa-th-list"></i></a>
+							<a href="shop-grid.html" id="grid" class="grid-btn active"><i class="fa fa-th"></i></a>
+						</div>
+					</div>
+
+					<div class="row shop-grid">
+						@foreach (var items in Model)
+						{
+							<div class="col-md-4 grid-item mb30">
+								<div class="arrival-overlay">
+									<img src="~/images/@items.Product_img1" class="img-size" alt="">
+									<img src="upload/sale.png" alt="" class="sale">
+									<div class="arrival-mask">
+										<a asp-controller="Home" asp-action="Cart" asp-route-id="@items.Product_id" class="medium-button button-red add-cart">Add to Cart</a>@*
+									<a href="#" class="wishlist"><i class="fa fa-heart"></i> Add to Wishlist</a>
+									<a href="#" class="compare"><i class="fa fa-retweet"></i>Add to Compare</a>*@
+									</div>
+								</div>
+								<div class="arr-content">
+									<p>@items.Product_Name</p>
+									<ul>
+										<li><span class="low-price"><i class="fa fa-rupee">@items.Product_Price</i></span></li>
+									</ul>
+									<a asp-controller="Home" asp-action="ProductDetails" asp-route-id="@items.Product_id" class="medium-button btn-primary add-cart" style="margin-top:20px">View Details</a>
+								</div>
+							</div>
+						}
+					</div>
+
+
+					<!-- End shopmain -->
+					<div class="partners">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-3">
+									<a href="#"><img src="images/brand-1.jpg" alt=""></a>
+								</div>
+								<div class="col-sm-3">
+									<a href="#"><img src="images/brand-2.jpg" alt=""></a>
+								</div>
+								<div class="col-sm-3">
+									<a href="#"><img src="images/brand-5.jpg" alt=""></a>
+								</div>
+								<div class="col-sm-3">
+									<a href="#"><img src="images/brand-4.jpg" alt=""></a>
+								</div>
+								<div class="col-sm-3">
+									<a href="#"><img src="images/brand-5.jpg" alt=""></a>
+								</div>
+								<div class="col-sm-2">
+									<a href="#"><img src="images/brand-.jpg" alt=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+				<!-- End content -->
+

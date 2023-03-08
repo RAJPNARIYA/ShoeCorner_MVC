@@ -1,0 +1,30 @@
+﻿
+
+<div class="collection clearfix">
+	<div class="container">
+
+		<div class="row">
+			@foreach(var items in Model)
+			{
+			<div class="col-md-4" style="margin:0px 0px 25px 0px;">
+				<div class="coll-item clearfix">
+
+					<div class="coll-box">
+							<a href="#"><img src="~/images/@items.Category_img" alt="" height="400px" width="300px"></a>
+						<div class="coll-text">
+							<span>Collection</span>
+							<p>For @items.Category_Name</p>
+							<a asp-action="CategoryProduct" asp-controller="Home" asp-route-id="@items.Category_id"> Get The Look <i class="fa fa-angle-right"></i></a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			}
+			
+
+
+		</div>
+
+	</div>
+</div>

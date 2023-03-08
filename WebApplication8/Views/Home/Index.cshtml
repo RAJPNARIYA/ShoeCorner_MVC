@@ -1,0 +1,346 @@
+﻿@using ClassLibrary1.BAL;
+@using ClassLibrary1.DAL;
+@using WebApplication8.Controllers;
+@*
+@model AllList;*@
+
+@{
+	ViewData["Title"] = "Home";
+}
+
+@*@inject IHttpContextAccessor httpContextAccessor;*@
+
+
+
+
+@*<div style="color:black">
+	@httpContextAccessor.HttpContext.Session.GetString("User_name")
+</div>*@
+<!-- Slider -->
+
+
+<div class="slider heightski">
+	<div class="fullwidthbanner-container">
+		<div class="fullwidthbanner" id="intro">
+			<ul>
+				@*@foreach (var i in Model)
+				{*@
+					<!-- First SLIDE -->
+					<li data-transition="random" data-slotamount="10" data-masterspeed="300">
+						<!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
+						<img src="~/images/slider-1.jpg" data-fullwidthcentering="on" alt="slide">
+						<!-- THE CAPTIONS IN THIS SLDIE -->
+						<div class="caption small_text lft"
+						 data-x="center"
+						 data-y="230"
+						 data-speed="300"
+						 data-start="1200"
+						 data-easing="easeOutExpo"
+						 data-end="7000"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+						@*@i.Slider_line1*@Hot Trends of This Year
+						</div>
+
+						<div class="caption lfl"
+						 data-x="center"
+						 data-y="280"
+						 data-speed="400"
+						 data-start="1800"
+						 data-easing="easeOutExpo"
+						 data-end="7200"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+							<img src="~/upload/revolution/s-border.png" alt="Image 1">
+						</div>
+
+						<div class="caption big_white lfb stt"
+						 data-x="center"
+						 data-y="350"
+						 data-speed="500"
+						 data-start="1800"
+						 data-easing="easeOutExpo"
+						 data-end="7100"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+						@*@i.Slider_line2*@Big sale on sandals
+						</div>
+
+						<div class="caption lfb stt"
+						 data-x="center"
+						 data-y="440"
+						 data-speed="640"
+						 data-start="2100"
+						 data-easing="easeOutExpo"
+						 data-end="7100"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+							<a href="#" class="slider-button">SHOP NOW </a>
+						</div>
+
+
+					</li>
+					@*2rd Slider*@
+					<li data-transition="random" data-slotamount="10" data-masterspeed="300">
+						<!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
+						<img src="~/images/slider-2.jpg" data-fullwidthcentering="on" alt="slide">
+						<!-- THE CAPTIONS IN THIS SLDIE -->
+						<div class="caption small_text lft"
+						 data-x="center"
+						 data-y="230"
+						 data-speed="300"
+						 data-start="1200"
+						 data-easing="easeOutExpo"
+						 data-end="7000"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+						@*@i.Slider_line1*@Hot Trends of This Year
+						</div>
+
+						<div class="caption lfl"
+						 data-x="center"
+						 data-y="280"
+						 data-speed="400"
+						 data-start="1800"
+						 data-easing="easeOutExpo"
+						 data-end="7200"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+							<img src="~/upload/revolution/s-border.png" alt="Image 1">
+						</div>
+
+						<div class="caption big_white lfb stt"
+						 data-x="center"
+						 data-y="350"
+						 data-speed="500"
+						 data-start="1800"
+						 data-easing="easeOutExpo"
+						 data-end="7100"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+						@*@i.Slider_line2*@New stylish shoes for men and women
+						</div>
+
+						<div class="caption lfb stt"
+						 data-x="center"
+						 data-y="440"
+						 data-speed="640"
+						 data-start="2100"
+						 data-easing="easeOutExpo"
+						 data-end="7100"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+							<a href="#" class="slider-button">SHOP NOW </a>
+						</div>
+
+
+					</li>
+					@*3rd Slider*@
+				<li data-transition="random" data-slotamount="10" data-masterspeed="300">
+					<!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
+					<img src="~/images/slider-3.jpg" data-fullwidthcentering="on" alt="slide">
+					<!-- THE CAPTIONS IN THIS SLDIE -->
+					<div class="caption small_text lft"
+						 data-x="center"
+						 data-y="230"
+						 data-speed="300"
+						 data-start="1200"
+						 data-easing="easeOutExpo"
+						 data-end="7000"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+						@*@i.Slider_line1*@Hot Trends of This Year
+					</div>
+
+					<div class="caption lfl"
+						 data-x="center"
+						 data-y="280"
+						 data-speed="400"
+						 data-start="1800"
+						 data-easing="easeOutExpo"
+						 data-end="7200"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+						<img src="~/upload/revolution/s-border.png" alt="Image 1">
+					</div>
+
+					<div class="caption big_white lfb stt"
+						 data-x="center"
+						 data-y="350"
+						 data-speed="500"
+						 data-start="1800"
+						 data-easing="easeOutExpo"
+						 data-end="7100"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+						@*@i.Slider_line2*@ New stylish shoes for men
+					</div>
+
+					<div class="caption lfb stt"
+						 data-x="center"
+						 data-y="440"
+						 data-speed="640"
+						 data-start="2100"
+						 data-easing="easeOutExpo"
+						 data-end="7100"
+						 data-endspeed="300"
+						 data-endeasing="easeInSine">
+						<a href="#" class="slider-button">SHOP NOW </a>
+					</div>
+
+
+				</li>
+				@*}*@
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+<!-- End SLider -->
+<!-- content
+	================================================== -->
+<div id="content">
+
+	<div class="collection clearfix">
+		<div class="container">
+
+			<div class="row">
+				
+
+					<div class="col-md-6">
+						<div class="coll-item clearfix">
+
+							<div class="coll-box">
+								<a href="#"><img src="~/images/men.jpg" alt="" height="400px" width="300px"></a>
+								<div class="coll-text">
+									<span>Collection</span>
+									<p>For Men</p>
+								<a asp-action="Men" asp-controller="Home"> Get The Look <i class="fa fa-angle-right"></i></a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				<div class="col-md-6">
+					<div class="coll-item clearfix">
+
+						<div class="coll-box">
+							<a href="#"><img src="~/images/female.jpg" alt="" height="400px" width="300px"></a>
+							<div class="coll-text">
+								<span>Collection</span>
+								<p>For Women</p>
+								<a asp-action="Female" asp-controller="Home"> Get The Look <i class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				
+
+			</div>
+
+		</div>
+	</div>
+	<!-- End Collection -->
+	<!-- our work portfolio -->
+	<div class="arrivals">
+		<div class="container">
+
+
+			<div class="filters">
+				<div class="filter clearfix">
+					<div class="holder">
+						<ul>
+							<li><a href="#" class="active" data-filter=".class2"><i class="fa fa-star"></i>BESTSELLERS</a></li>
+						</ul>
+						<div class="holder-border"></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+
+				<div class="row shop-grid">
+					@{
+						if (Model != null)
+						{
+
+
+							foreach (var item in Model)
+							{
+										<div class="col-md-3 grid-item mb30">
+											<div class="arrival-overlay">
+												<img src="~/images/@item.Product_img1" class="img-size" alt="product image">
+												<div class="arrival-mask">
+												@{
+											var Product_id=item.Product_id;
+												}
+												
+												<a asp-controller="Home" asp-action="Cart" asp-route-id="@item.Product_id" class="medium-button button-red add-cart">Add to Cart</a>
+												</div>
+											</div>
+											<div class="arr-content">
+											<p>@item.Product_Name</p>
+												<ul>
+													<li><span class="low-price"><i class="fa fa-rupee">@item.Product_Price</i></span></li>
+												</ul>
+											<a asp-controller="Home" asp-action="ProductDetails" asp-route-id="@item.Product_id" class="medium-button btn-primary add-cart" style="margin-top:20px">View Details</a>
+											</div>
+										</div>
+						}
+						}
+					}
+
+						</div>
+			</div>
+		</div>
+		<!-- End Filters -->
+
+	</div>
+
+</div>
+<!-- end our work portfolio -->
+
+<div class="middle-content">
+	<div class="container">
+		<h1>FREE SHIPPING <span>ALL ORDERS OVER <i class="fa fa-rupee">1500</i> </span></h1>
+		<div class="middle-shipp">
+			<p>We will ship your item within 3 days</p>
+			<div class="mid-border"></div>
+		</div>
+	</div>
+</div>
+
+<div class="partners">
+	<div class="container">
+		<div class="row">
+			@*@foreach (var item in Model.brandsList)
+			{*@
+				<div class="col-sm-2">
+					<a href="#"><img src="~/images/nike.jpg" alt="Brand Image"></a>
+				</div>
+
+				<div class="col-sm-2">
+					<a href="#"><img src="~/images/adidas.jpg" alt="Brand Image"></a>
+				</div>
+
+				<div class="col-sm-2">
+					<a href="#"><img src="~/images/gucci.jpg" alt="Brand Image"></a>
+				</div>
+
+				<div class="col-sm-2">
+					<a href="#"><img src="~/images/puma.jpg" alt="Brand Image"></a>
+				</div>
+
+			<div class="col-sm-2">
+				<a href="#"><img src="~/images/reebok.png" alt="Brand Image"></a>
+			</div>
+
+			<div class="col-sm-2">
+				<a href="#"><img src="~/images/merrell.jpg" alt="Brand Image"></a>
+			</div>
+			@*}*@
+		</div>
+	</div>
+</div>

@@ -1,0 +1,181 @@
+﻿@{
+	ViewData["Title"] = "Product Details";
+}
+@using ClassLibrary1.DAL;
+
+<div id="content">
+
+	<div class="product-page container">
+
+		<div class="row">
+
+			
+			
+
+			@foreach(var item in Model){
+			<div class="col-md-6">
+				<div class="single-img">
+						<img src="~/images/@item.Product_img1" alt="">
+					@*<div class="sp-wrap">
+						<a href="~/images/@item.Product_img1"><img src="~/images/@item.Product_img1" alt=""></a>
+						<a href="~/images/3.jpg"><img src="~/images/@item.Product_img2" alt=""></a>
+						
+						<a href="~/images/4.jpg"><img src="~/images/4_tb.jpg" alt=""></a>
+						<a href="~/images/5.jpg"><img src="~/images/5_tb.jpg" alt=""></a>
+						<a href="~/images/6.jpg"><img src="~/images/6_tb.jpg" alt=""></a>
+					</div>*@
+					<div id="test"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="single-desc">
+					<div class="top-single">
+						@*<span>Shop  /  Men  /  Jackets  /  Black Leather Jacket</span>*@
+						<div class="right-arrows">
+							<a href="#"><i class="fa fa-angle-left"></i></a>
+							<a href="#"><i class="fa fa-angle-right"></i></a>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div class="middle-single">
+						<h1>@item.Product_Name</h1>
+						
+						@*<img src="upload/stars.png" alt="">
+
+						<div class="reviews">
+							<a href="#">21 Rewiew(s)</a>  /
+							<a href="#">Add a Review</a>
+						</div>*@
+						<div class="clear"></div>
+
+					</div>
+
+					<div class="single-price">
+						<ul>
+								<li><span class="low-price"><i class="fa fa-rupee">@item.Product_Price</i></span></li>
+							@*<li><span class="low-price">$1 299.00</span></li>*@
+						</ul>
+					</div>
+
+					@*<div class="single-infos">
+						<p><span>Brand:</span> Calvin Klein </p>
+						<p><span>Product Code:</span> 00019 </p>
+						<p><span>Availability:</span> In Stock </p>
+					</div>*@
+
+					@*<div class="single-inputs row">
+						<div class="col-md-6">
+							<select class="select" name="size">
+								<option value="Select Size">Select Size</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+							</select>
+						</div>*@
+						@*<div class="col-md-6">
+							<select class="select">
+								<option value="Select Color">Select Color</option>
+								<option value="White">White</option>
+								<option value="Black">Black</option>
+								<option value="Red">Red</option>
+								<option value="Blue">Blue</option>
+								<option value="Green">Green</option>
+							</select>
+						</div>
+					</div>*@
+
+
+
+					<div class="prod-end">
+						@*<input type="text" placeholder="1" name="quantity">*@
+							@*@{
+								int Qua = Convert.ToInt32(Textbox.Text);
+							}*@
+							
+
+							@using (Html.BeginForm("Cart","Home"))
+							{
+								<div class="single-inputs row">
+									<div class="col-md-6">
+								<select class="select" name="size" required>
+								<option value="Select Size">Select Size</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+							</select>
+							</div>
+							</div>
+
+								<input type="number" name="Qua" placeholder="Add Quantity" style="width:30%; background-color:#fff; border:1px solid #e4e4e4; font-family: 'Merriweather';padding: 12px 15px; color:#424242; font-size: 13px">
+
+								<br />
+
+								<br />
+								<input type="hidden" name="id" value="@item.Product_id">
+								<input type="hidden" name="price" value="@item.Product_Price">
+								<input type="submit" asp-action="Cart" asp-Controller="Home" style="border:none;"	 class="medium-button button-red add-cart" value="Add To Cart">
+
+									
+							}
+						<div class="clear"></div>
+
+					</div>
+
+					<div class="single-descript">
+						<p>@item.Product_Desc</p>
+					</div>
+
+					<div class="share">
+						<span>Share</span>
+						<ul>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+							<li><a href="#"><i class="fa fa-envelope"></i></a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		}
+		</div>
+	</div>
+	
+	<!-- feat-items -->
+
+	<div class="partners">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners1.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners2.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners3.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners4.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners5.png" alt=""></a>
+				</div>
+				<div class="col-sm-2">
+					<a href="#"><img src="upload/partners6.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<!-- End content -->
